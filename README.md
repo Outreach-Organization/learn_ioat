@@ -28,11 +28,11 @@ The Real-time Gaming Framework for IoT and Smart Agriculture is an educational p
 
 ### IoT Board Tutorial
 
-Learn how to connect sensors (e.g., soil moisture) and actuators (e.g., water pump) using an Arduino device. Follow the provided tutorial to understand the hardware setup.
+Learn how to connect sensors (e.g., soil moisture) and actuators (e.g., water pump) using an Arduino device. Follow the provided tutorial to understand the hardware setup. Coming soon...
 
 ### MQTT Protocol
 
-Explore the MQTT protocol, a widely used data protocol for IoT. Understand its use and implementation in establishing communication between devices.
+Explore the MQTT protocol, a widely used data protocol for IoT. Understand its use and implementation in establishing communication between devices. Coming soon...
 
 ### Realtime Data Visualization
 
