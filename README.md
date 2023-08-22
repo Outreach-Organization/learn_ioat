@@ -2,7 +2,14 @@
 
 ## Description
 
-The Real-time Gaming Framework for IoT and Smart Agriculture is an educational project that introduces the concepts of IoT, sensor integration, MQTT protocol, and real-time data visualization through an interactive game. This README provides an overview of the framework's components and how to get started.
+The Real-time Gaming Framework for IoT and Smart Agriculture is an educational project that introduces the concepts of IoT, sensor integration, MQTT protocol, and real-time data visualization through an interactive game. This README provides an overview of the framework's components and how to get started. Helps in learning!
+
+1. Web App Framework: An IoT framework to connecting sensor and actuator "things" also called Internet of Agricultural Things (IoAT)
+2. IoT board: Gives a tutorial about how a sensors  (e.g., soil moisture) and actuator (water pump) can be connected using Arduino device
+3. MQTT protocol: Discuss the use and implementation of MQTT protocol, which is one of most widely used data protocol for IoT
+4. Realtime data-based Plant growth visualization
+5. Interface for soil moisture level control- automatic/manual
+6. Reward-based gaming control interface for plant care
 
 <img width="1225" alt="Screenshot 2023-08-22 at 11 49 43 AM" src="public/screen.png">
 
@@ -42,13 +49,17 @@ Learn how to visualize real-time data from sensors. This part of the framework w
 
 ## Gameplay
 
-### Soil Moisture Level Control
+1. Moisture Level Monitoring: The game keeps track of how much water the plant has. It shows this on the screen, so players know when the plant needs water.
+2. Watering the Plant: Players can water the plant by clicking a button. If the plant needs water (moisture level below 70), players earn points. If not, they lose points.
+3. Game Goals: The game sets goals for the player. These goals are about keeping the plant's moisture level within specific ranges. When players achieve a goal, they earn points and move to a higher level.
+4. Points and Level: Players can see their earned points and current level on the screen. Points increase as they achieve goals.
+Restarting the Game: If players want to play again, they can restart the game by clicking a button. This refreshes the game.
 
-Experience controlling the soil moisture level of a virtual plant. Understand how the framework simulates this interaction and provides feedback.
-
-### Reward-Based Gaming Control
-
-Engage in a reward-based game where taking care of the virtual plant results in earning points and achieving higher levels.
+## Game Flow
+1. The game starts by showing a plant and its moisture level.
+2. Players can water the plant and see their points increase.
+3. The game has goals related to moisture levels. Achieving these goals gives players more points and moves them up a level.
+4. If players want to play again, they can restart the game.
 
 ## Usage
 
