@@ -53,7 +53,7 @@ Learn how to visualize real-time data from sensors. This part of the framework w
 2. Watering the Plant: Players can water the plant by clicking a button. If the plant needs water (moisture level below 70), players earn points. If not, they lose points.
 3. Game Goals: The game sets goals for the player. These goals are about keeping the plant's moisture level within specific ranges. When players achieve a goal, they earn points and move to a higher level.
 4. Points and Level: Players can see their earned points and current level on the screen. Points increase as they achieve goals.
-Restarting the Game: If players want to play again, they can restart the game by clicking a button. This refreshes the game.
+5. Restarting the Game: If players want to play again, they can restart the game by clicking a button. This refreshes the game.
 
 ## Game Flow
 1. The game starts by showing a plant and its moisture level.
