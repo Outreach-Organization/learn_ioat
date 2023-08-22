@@ -100,6 +100,17 @@ To enable websockets for the Mosquitto broker, follow these steps:
 
 3. Save and close the file.
 
+### Start Mosquitto Broker
+
+Before running the game, you need to start the Mosquitto broker to enable MQTT communication:
+
+1. Start the Mosquitto broker with the provided configuration:
+
+    ```bash
+    mosquitto -c /etc/mosquitto/mosquitto.conf
+    ```
+
+
 ### Python Setup
 
 Before running the game, ensure you have the necessary Python packages installed:
