@@ -4,9 +4,9 @@ import paho.mqtt.client as mqtt
 
 
 ser = serial.Serial('/dev/ttyACM0',9600,timeout=5)
-ser.flushInput()
-ser.flushOutput()
-ser.write("get") 
+#ser.flushInput()
+#ser.flushOutput()
+#ser.write("get") 
 
 # sleep(1) for 100 millisecond delay
 # 100ms dely
@@ -32,12 +32,13 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     """Callback function when a message is received on a subscribed topic."""
+    print(msg.payload.decode())
     if msg.topic == "plant/command":
         command = msg.payload.decode()
         if command == "start":
-            usb.write(b'led_on')
+            ser.write(b'led_on')
         elif command == "stop":
-            usb.write(b'led_off')
+            ser.write(b'led_off')
     else:
         print("Received message on topic:", msg.topic)
         print("Message:", msg.payload.decode())
@@ -59,5 +60,4 @@ while True:
         value = int(line)
         print("Arduino moisture level:", value)
         mqtt_client.publish(TOPIC, value)
-
 
