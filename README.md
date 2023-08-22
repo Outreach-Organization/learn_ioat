@@ -80,7 +80,7 @@ The gaming framework is designed to simulate the care of a virtual plant using R
 ### Arduino Setup
 
 1. Install Arduino IDE from https://www.arduino.cc/en/software.
-2. Obtain a water pump and soil moisture sensor that are Arduino compatible.
+2. Obtain a water pump, channel relay, and soil moisture sensor that are Arduino compatible.
 3. Use Arduino IDE to upload the provided code (.ino file) to your Arduino device.
 
 ### Mosquitto Broker Installation
