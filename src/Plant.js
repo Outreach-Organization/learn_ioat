@@ -1,0 +1,142 @@
+import React, { useState, useEffect } from 'react';
+import './Plant.css';
+import dryImage from './dry.png';
+import moistImage from './moist.png';
+import wetImage from './wet.png';
+import mqtt from 'mqtt';
+
+const client = mqtt.connect('mqtt://localhost:8080');
+
+const Plant = () => {
+  const [moistureLevel, setMoistureLevel] = useState(0);
+  const [points, setPoints] = useState(0);
+  const [level, setLevel] = useState(1);
+  const [plantGoals, setPlantGoals] = useState([
+    { id: 1, minMoisture: 30, maxMoisture: 70, achieved: false },
+    { id: 2, minMoisture: 40, maxMoisture: 60, achieved: false },
+    { id: 3, minMoisture: 50, maxMoisture: 70, achieved: false }
+  ]);
+  const [isWatering, setIsWatering] = useState(false);
+
+  useEffect(() => {
+    client.on('connect', () => {
+      client.subscribe('plant/moistureLevel');
+    });
+
+    client.on('message', (topic, message) => {
+      if (topic === 'plant/moistureLevel') {
+        setMoistureLevel(parseInt(message.toString()));
+      }
+    });
+
+    return () => {
+      client.end();
+    };
+  }, []);
+
+  const getPlantImage = () => {
+    if (moistureLevel <= 30) {
+      return dryImage;
+    } else if (moistureLevel <= 70) {
+      return moistImage;
+    } else {
+      return wetImage;
+    }
+  };
+
+  const toggleWatering = () => {
+    if (!isWatering) {
+      // Start watering
+      if (moistureLevel < 70) {
+        // Correct action - Increment points
+        setPoints(prevPoints => prevPoints + 20);
+      } else {
+        // Wrong action - Reduce points
+        setPoints(prevPoints => Math.max(prevPoints - 20, 0));
+      }
+      setIsWatering(true);
+
+      // Send command to start watering
+      client.publish('plant/command', 'start');
+    } else {
+      // Stop watering
+      setIsWatering(false);
+
+      // Send command to stop watering
+      client.publish('plant/command', 'stop');
+    }
+  };
+
+  useEffect(() => {
+    // Check level up condition whenever moisture level changes
+    if (
+      level <= plantGoals.length &&
+      moistureLevel >= plantGoals[level - 1].minMoisture &&
+      moistureLevel <= plantGoals[level - 1].maxMoisture &&
+      !plantGoals[level - 1].achieved
+    ) {
+      setLevel(prevLevel => prevLevel + 1);
+      setPoints(prevPoints => prevPoints + 50);
+      const updatedPlantGoals = [...plantGoals];
+      updatedPlantGoals[level - 1].achieved = true;
+      setPlantGoals(updatedPlantGoals);
+    }
+  }, [moistureLevel]);
+
+  const getMoistureLevelInfo = () => {
+    if (moistureLevel <= 30) {
+      return 'The soil is dry. The plant needs watering.';
+    } else if (moistureLevel <= 70) {
+      return 'The soil is moist. The plant is in a healthy state.';
+    } else {
+      return 'The soil is wet. Avoid overwatering to prevent root rot.';
+    }
+  };
+
+
+  const restartGame = () => {
+    // Refresh the page to restart the game
+    window.location.reload();
+  };
+
+  return (
+    <div className="PlantCard">
+      <img className="PlantImage" src={getPlantImage()} alt="Plant" />
+      <div className="ControlButtons">
+        <p className="MoistureLevel">Moisture Level: {moistureLevel}%</p>
+        <p className="MoistureLevelInfo">{getMoistureLevelInfo()}</p>
+        <button disabled={true} onClick={() => {}}>
+          Decrease Moisture
+        </button>
+        <button
+          className={isWatering ? 'StopWateringButton' : 'StartWateringButton'}
+          onClick={toggleWatering}
+        >
+          {isWatering ? 'Stop Watering' : 'Start Watering'}
+        </button>
+      </div>
+
+      <div className="GoalsInfo">
+        <div className="GamificationInfo">
+          <h2>Points: {points}</h2>
+          <h2>Level: {level}</h2>
+        </div>
+        <h2>Plant Goals:</h2>
+        <ul>
+          {plantGoals.map(plant => (
+            <li
+              key={plant.id}
+              className={plant.achieved ? 'AchievedGoal' : 'NotAchievedGoal'}
+            >
+              Goal {plant.id}: Maintain moisture between {plant.minMoisture}% and {plant.maxMoisture}% -{' '}
+              {plant.achieved ? 'Achieved' : 'Not achieved'}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Plant;
+

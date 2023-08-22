@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+h1 {
+  display: inline-block;
+  color: green;
+  font-family: 'Righteous', serif;
+  font-size: 4em;
+  text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+}
+
+.PlantCard {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.PlantImage {
+  width: 35%;
+  height: auto;
+  max-height: 900px; /* Adjust the maximum height as needed */
+  margin-right: 20px;
+}
+
+.PlantInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+
+
+.MoistureLevelInfo {
+  font-size: 26px;
+  margin-bottom: 20px;
+  background-color: yellow; /* Apply yellow background color */
+  padding: 10px; /* Add padding for better visibility */
+}
+
+
+.MoistureLevel {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.ControlButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.ControlButton {
+  font-size: 19px;
+  padding: 12px 24px;
+  margin: 0 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  display: block; /* Ensure the buttons take full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.ControlButton:hover {
+  background-color: #e0e0e0;
+}
+
+.StartWateringButton {
+  background-color: green;
+  color: white;
+}
+
+.StopWateringButton {
+  background-color: red;
+  color: white;
+}
+
+.GamificationInfo {
+  margin-bottom: 20px;
+}
+
+.GoalsInfo {
+  text-align: left;
+  margin-left: 90px;
+}
+
+.GoalsInfo h2 {
+  margin-bottom: 10px;
+}
+
+.GoalsInfo li {
+  font-size: 18px; /* Adjust the font size as desired */
+    padding: 12px 24px;
+    font-weight: bold;
+}
+
+
+.AchievedGoal {
+  color: green;
+}
+
+.NotAchievedGoal {
+  color: red;
+}
+
+
+
+button{
+font-size: 18px;
+width:200px;
+height:80px;
+}
+
+
