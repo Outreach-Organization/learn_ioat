@@ -4,12 +4,12 @@
 
 The Real-time Gaming Framework for IoT and Smart Agriculture is an educational project that introduces the concepts of IoT, sensor integration, MQTT protocol, and real-time data visualization through an interactive game. This README provides an overview of the framework's components and how to get started. Helps in learning!
 
-1. Web App Framework: An IoT framework to connecting sensor and actuator "things" also called Internet of Agricultural Things (IoAT)
-2. IoT board: Gives a tutorial about how a sensors  (e.g., soil moisture) and actuator (water pump) can be connected using Arduino device
-3. MQTT protocol: Discuss the use and implementation of MQTT protocol, which is one of most widely used data protocol for IoT
-4. Realtime data-based Plant growth visualization
-5. Interface for soil moisture level control- automatic/manual
-6. Reward-based gaming control interface for plant care
+1. Web App Framework: facilitates the connection of sensor and actuator devices, forming the Internet of Agricultural Things (IoAT).
+2. IoT board: a tutorial on how to connect sensors (e.g., soil moisture sensors) and actuators (e.g., water pumps) using Arduino devices.
+3. MQTT protocol: significance and implementation of the MQTT protocol, a widely utilized data exchange protocol within the IoT domain.
+4. Realtime data-based Plant growth visualization: explore the visualization of plant growth using real-time data.
+5. Interface for soil moisture level control - automatic/manual: an interface that allows for the automatic or manual control of soil moisture levels.
+6. Reward-based gaming control interface for plant care: a unique interface that incorporates rewards and gaming elements to enhance user engagement in the process of plant care.
 
 <img width="1225" alt="Screenshot 2023-08-22 at 11 49 43 AM" src="public/screen.png">
 
