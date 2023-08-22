@@ -4,7 +4,7 @@
 
 The Real-time Gaming Framework for IoT and Smart Agriculture is an educational project that introduces the concepts of IoT, sensor integration, MQTT protocol, and real-time data visualization through an interactive game. This README provides an overview of the framework's components and how to get started.
 
-<img width="1225" alt="Screenshot 2023-08-22 at 11 49 43 AM" src="assets/screen.png">
+<img width="1225" alt="Screenshot 2023-08-22 at 11 49 43 AM" src="public/screen.png">
 
 ## Table of Contents
 
